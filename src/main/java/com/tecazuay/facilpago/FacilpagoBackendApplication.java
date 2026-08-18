@@ -8,7 +8,6 @@ public class FacilpagoBackendApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FacilpagoBackendApplication.class, args);
-		System.out.println("Funca");
 	}
 
 }

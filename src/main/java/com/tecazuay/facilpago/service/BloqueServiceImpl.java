@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service // La anotación va en la implementación, no en la interfaz
+@Service
 public class BloqueServiceImpl implements IBloqueService {
 
     @Autowired
@@ -19,7 +19,7 @@ public class BloqueServiceImpl implements IBloqueService {
     }
 
     @Override
-    public Optional<Bloque> obtenerPorId(String id) {
+    public Optional<Bloque> obtenerPorId(Long id) {
         return bloqueRepository.findById(id);
     }
 
@@ -29,7 +29,7 @@ public class BloqueServiceImpl implements IBloqueService {
     }
 
     @Override
-    public void eliminar(String id) {
+    public void eliminar(Long id) {
         bloqueRepository.deleteById(id);
     }
 }

@@ -1,6 +1,8 @@
 package com.tecazuay.facilpago.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import java.util.List;
 
@@ -10,12 +12,19 @@ import java.util.List;
 public class Condomino {
 
     @Id
-    @Column(name = "cedula_condominio", length = 15)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @NotBlank(message = "La cedula es obligatoria")
+    @Column(name = "cedula_condominio", nullable = false, unique = true, length = 15)
     private String cedulaCondominio;
 
+    @NotBlank(message = "El nombre es obligatorio")
     @Column(name = "nombre_condomino", nullable = false, length = 50)
     private String nombreCondomino;
 
+    @NotBlank(message = "El apellido es obligatorio")
     @Column(name = "apellido_condomino", nullable = false, length = 50)
     private String apellidoCondomino;
 
@@ -26,16 +35,16 @@ public class Condomino {
     private String telefonoCondomino;
 
     // Se mantiene el bloque principal
+    @NotNull(message = "El bloque es obligatorio")
     @ManyToOne
-    @JoinColumn(name = "numero_bloque", nullable = false)
+    @JoinColumn(name = "bloque_id", nullable = false)
     private Bloque bloque;
-
 
     @ManyToMany
     @JoinTable(
             name = "condominos_departamentos",
-            joinColumns = @JoinColumn(name = "cedula_condominio"),
-            inverseJoinColumns = @JoinColumn(name = "numero_departamento")
+            joinColumns = @JoinColumn(name = "condomino_id"),
+            inverseJoinColumns = @JoinColumn(name = "departamento_id")
     )
     private List<Departamento> departamentos;
 }

@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface ICondominoService {
     List<Condomino> listarTodos();
-    Optional<Condomino> obtenerPorId(String id);
+    Optional<Condomino> obtenerPorId(Long id);
     Condomino guardar(Condomino condomino);
-    void eliminar(String id);
+    void eliminar(Long id);
 }

@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface IDepartamentoService {
     List<Departamento> listarTodos();
-    Optional<Departamento> obtenerPorId(String id);
+    Optional<Departamento> obtenerPorId(Long id);
     Departamento guardar(Departamento departamento);
-    void eliminar(String id);
+    void eliminar(Long id);
 }

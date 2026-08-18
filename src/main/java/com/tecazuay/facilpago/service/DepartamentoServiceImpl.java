@@ -19,7 +19,7 @@ public class DepartamentoServiceImpl implements IDepartamentoService {
     }
 
     @Override
-    public Optional<Departamento> obtenerPorId(String id) {
+    public Optional<Departamento> obtenerPorId(Long id) {
         return departamentoRepository.findById(id);
     }
 
@@ -29,7 +29,7 @@ public class DepartamentoServiceImpl implements IDepartamentoService {
     }
 
     @Override
-    public void eliminar(String id) {
+    public void eliminar(Long id) {
         departamentoRepository.deleteById(id);
     }
 }

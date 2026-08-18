@@ -19,7 +19,7 @@ public class CondominoServiceImpl implements ICondominoService {
     }
 
     @Override
-    public Optional<Condomino> obtenerPorId(String id) {
+    public Optional<Condomino> obtenerPorId(Long id) {
         return condominoRepository.findById(id);
     }
 
@@ -29,7 +29,7 @@ public class CondominoServiceImpl implements ICondominoService {
     }
 
     @Override
-    public void eliminar(String id) {
+    public void eliminar(Long id) {
         condominoRepository.deleteById(id);
     }
 }

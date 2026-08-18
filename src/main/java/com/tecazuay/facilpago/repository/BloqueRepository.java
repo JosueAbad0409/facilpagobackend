@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BloqueRepository extends JpaRepository<Bloque, String> {
+public interface BloqueRepository extends JpaRepository<Bloque, Long> {
 
 }

@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface IBloqueService {
     List<Bloque> listarTodos();
-    Optional<Bloque> obtenerPorId(String id);
+    Optional<Bloque> obtenerPorId(Long id);
     Bloque guardar(Bloque bloque);
-    void eliminar(String id);
+    void eliminar(Long id);
 }
