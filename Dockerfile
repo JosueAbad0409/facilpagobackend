@@ -7,7 +7,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Etapa 2: Ejecución
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:21-jre-alpin
 WORKDIR /app
 # Copiamos el .jar generado en la etapa anterior
 COPY --from=build /app/target/*.jar app.jar
