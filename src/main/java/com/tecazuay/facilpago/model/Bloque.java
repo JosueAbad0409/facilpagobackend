@@ -15,7 +15,7 @@ public class Bloque {
     private Long id;
 
     @NotBlank(message = "El numero de bloque es obligatorio")
-    @Column(name = "numero_bloque", nullable = false, unique = true, length = 10)
+    @Column(name = "numero_bloque", nullable = false, unique = true, length = 100)
     private String numeroBloque;
 
     @NotBlank(message = "La descripcion es obligatoria")
